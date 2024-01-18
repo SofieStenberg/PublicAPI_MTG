@@ -1,0 +1,56 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: rgb(38, 21, 21);
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 64px;
+}
+
+.inputField {
+	text-align: center;
+	/* margin-left: 100px; */
+}
+
+#textInput {
+	width: 350px;
+}
+
+.checkboxes {
+	margin-top: 50px;
+	margin-left: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 20px;
+}
+
+/* .checkboxes > input {
+	margin-right: 10px;
+} */
+
+.logo {
+	border-radius: 50%;
+}
+
+.displayCards {
+	margin-top: 50px;
+	margin-left: 50px;
+	/* display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around; */
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.container > p {
+	color: white;
+	margin: 10px;
+	
+}
+

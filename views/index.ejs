@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="styles/main.css" />
+</head>
+<body>
+	<h1>Magic The Gathering</h1>
+
+	<form action="/textSearch" class="inputField"  method="POST">
+		<input id="textInput" type="text" name="searchName">
+		<input type="submit" value="Search">
+	</form>
+
+	<form action="/colorSearch" method="post">
+		<div class="checkboxes">
+			
+			<input type="checkbox" id="white" value="yes" name="white" /> <img class="logo" src="/images/whiteSymbol.jpg" alt="MTG white mana symbol" width="15" height="15" />
+			<input type="checkbox" id="blue" value="yes" name="blue" /> <img class="logo" src="/images/blueSymbol.jpg" alt="MTG blue mana symbol" width="15" height="15" />
+			<input type="checkbox" id="black" value="yes" name="black" /> <img class="logo" src="/images/blackSymbol.jpg" alt="MTG black mana symbol" width="15" height="15" /> 
+			<input type="checkbox" id="red" value="yes" name="red" /> <img class="logo" src="/images/redSymbol.jpg" alt="MTG red mana symbol" width="15" height="15" /> 
+			<input type="checkbox" id="green" value="yes" name="green" /> <img class="logo" src="/images/greenSymbol.jpg" alt="MTG green mana symbol" width="15" height="15" />
+			
+			<input type="submit" value="Search">
+		</div>
+	</form>
+
+	<div class="displayCards">
+		<% if ( locals.cards ) { %>
+			<% cards.forEach(card => { %>	
+			<div class="card" style="width: 18rem;">
+				<% if (card.imageUrl) { %>
+					<img src="<%= card.imageUrl %>" alt="Image of card" />
+				<% } %>
+				<div class="container">
+					<p> Name: <%= card.name %> </p>
+					<p> Type: <%= card.type %> </p>
+					<p> Rarity: <%= card.rarity %> </p>
+					<p> Description: <%= card.text %> </p>
+					<p> ID: <%= card.id %> </p>
+				</div>
+			</div>
+				
+			<% }); %>	
+		<% }; %>
+	</div>
+	
+</body>
+</html>
